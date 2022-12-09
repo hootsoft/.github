@@ -1,6 +1,5 @@
 # Hootsoft
-## Set-up Environment(s)
-### Installing Package Repos
+## Packages
 The @hootsoft application is built of multiple packages with multiple purposes. They are as follows:
 | Name | Purpose |
 | -- | -- |
@@ -11,6 +10,31 @@ The @hootsoft application is built of multiple packages with multiple purposes. 
 | hootsoft.github.io | This repo should not be manually modified. It contains the compiled JS files for the @hootsoft/frontend_framework and is used in conjunction with the exposed NPM typings. For this to work, we must import the @hootsoft/frontend_framework package from NPM and also point Module Federation to this repo's `remoteEntry.js` file.  |
 | javaRestApis | This is a repo containing some REST API training Dan has been doing around Java. This is not currently implemented into hootsoft. |
 
+## Set-up Environment(s)
+### Installing Package Repos
+To install package repos, ensure you have installed [GitHub CLI](https://cli.github.com/). Your machine might need a reboot before it starts working. For local manageability, I would recommend creating a folder (directory) called "Hootsoft" and cloning all of the repos into one place. This can be done through GUI or from the terminal, navigating to where you would like the new directory and running `mkdir "Hootsoft"`. 
+
+#### @hootsoft/backend
+- Open a terminal locally and `cd` into the "Hootsoft" directory you have created. For example `cd /Hootsoft/`;
+- Once in the correct directory, run `gh repo clone hootsoft/backend`.
+
+#### @hootsoft/backend_library
+- Open a terminal locally and `cd` into the "Hootsoft" directory you have created. For example `cd /Hootsoft/`;
+- Once in the correct directory, run `gh repo clone hootsoft/backend_library`.
+
+#### @hootsoft/frontend
+- Open a terminal locally and `cd` into the "Hootsoft" directory you have created. For example `cd /Hootsoft/`;
+- Once in the correct directory, run `gh repo clone hootsoft/frontend`.
+
+#### @hootsoft/frontend_library
+- Open a terminal locally and `cd` into the "Hootsoft" directory you have created. For example `cd /Hootsoft/`;
+- Once in the correct directory, run `gh repo clone hootsoft/frontend_library`.
+
+#### @hootsoft/hootsoft.github.io
+You do not need this GitHub repo locally. If you have it, cool, but you shouldn't be modifying it at all. All modifications are handled by GitHub Action Pipelines.
+
+#### @hootsoft/javaRestApis
+This repo is experimental at this point. There is no need to pull it down. 
 
 ### Installing DynamoDB in Docker
 If your backend package uses DynamoDB, you will want a local instance. One way this can be done is by installing it from a Docker image. The recommended Docker image  is `instructure/dynamo-local-admin:latest` and can be installed using the following steps:
