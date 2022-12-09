@@ -10,7 +10,15 @@ The @hootsoft application is built of multiple packages with multiple purposes. 
 | hootsoft.github.io | This repo should not be manually modified. It contains the compiled JS files for the @hootsoft/frontend_framework and is used in conjunction with the exposed NPM typings. For this to work, we must import the @hootsoft/frontend_framework package from NPM and also point Module Federation to this repo's `remoteEntry.js` file.  |
 | javaRestApis | This is a repo containing some REST API training Dan has been doing around Java. This is not currently implemented into hootsoft. |
 
-## Set-up Environment(s)
+## Set-up Environment
+To set up your environment, you need to perform multiple steps. For any of the setup methods we can use, you will need to make sure you have a few things installed otherwise you will run into errors. The things to install are:
+1. [GitHub CLI](https://cli.github.com/)
+2. [Docker Desktop](https://www.docker.com/products/docker-desktop/) and ensure Docker CLI is working.
+
+Just a reminder that you may need to reboot your machine after installing for the changes to take effect.
+
+Once you have installed these, you can go ahead and choose a method of setup. Either you can perform individual steps, as listed in the subheadings within this section. Alternatively, you can download and run the [Hootsoft Initial Setup](https://raw.githubusercontent.com/hootsoft/.github/main/hootsoft-initial-setup.bat) batch file and your environment should set itself up. To download the file, right-click the hyperlink and "Save As". Once downloaded, either edit the desired directory (it defaults to `C:\`) or just double-click it and run it. 
+
 ### Installing Package Repos
 To install package repos, ensure you have installed [GitHub CLI](https://cli.github.com/). Your machine might need a reboot before it starts working. For local manageability, I would recommend creating a folder (directory) called "Hootsoft" and cloning all of the repos into one place. This can be done through GUI or from the terminal, navigating to where you would like the new directory and running `mkdir "Hootsoft"`. 
 
@@ -49,8 +57,8 @@ When setting up DynamoDB within docker, please use the following configuration t
 
 | Package | Name | Port(s) |
 | ----------- | ----------- | ----------- |
-| Flyhoot | dynamodb_flyhoot | 8998:8000 |
 | Camphoot | dynamodb_camphoot | 8999:8000 |
+| Flyhoot | dynamodb_flyhoot | 8998:8000 |
 
 ## Running your Environment(s) Locally
 ### @hootsoft/backend
