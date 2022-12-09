@@ -6,7 +6,7 @@ If your backend package uses DynamoDB, you will want a local instance. One way t
 
 - Ensure Docker is installed on your local machine and that it works from the terminal
 - In the terminal, run `docker pull instructure/dynamo-local-admin`
-- Then run `docker run -p {ports} -it --rm instructure/dynamo-local-admin`. Make sure to enter a [port](#dynamodb-ports) from the table as it appears in the ports column, for example `8992:8000` against the desired package.
+- Then run `docker run -p {ports} -it --name {name} instructure/dynamo-local-admin`. Make sure to replace `{port}` and `{name}` with the corresponding [port and name](#dynamodb-ports) from the table as it appears in the corresponding columns, for example `8992:8000` for the port and `dynamodb_testhoot` for the name. 
 
 #### DynamoDB Ports
 When setting up DynamoDB within docker, please use the following configuration to ensure that problems aren't caused by different local instances not being aligned. 
@@ -30,4 +30,7 @@ It will look something like:
 
 You will need to change the `{package}` out for the package name. So, for example, it would look like `cd .\backend\packages\flyhoot\`.
 
-#### Running 
+#### Running a DynamoDB Database
+If the application that you are running requires a DynamoDB Database, ensure that you have carried out the required steps from [Installing DynamoDB in Docker](#installing-dynamodb-in-docker) before continuing. 
+
+Once you have this set up, you should be able to run `docker start {name}` to run the container locally. The name should match the [name in the table](#dynamodb-ports). If successful, you will be able to access your database through a GUI at `http://localhost:{port}/`, for example `http://localhost:8992/`.
