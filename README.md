@@ -1,5 +1,17 @@
 # Hootsoft
 ## Set-up Environment(s)
+### Installing Package Repos
+The @hootsoft application is built of multiple packages with multiple purposes. They are as follows:
+| Name | Purpose |
+| -- | -- |
+| backend | This is a repo containing all backend applications such as Flyhoot, Dayhoot, etc. The purpose of this repo is to handle backend calls to the application through APIs. Some of this code is built using the @hootsoft/backend_framework. |
+| backend_framework | This a repo containing all common backend functionality consumed within the @hootsoft/backend project. This repo is exposed as a library to NPM and should be used and updated to aid with code maintainability and reusability. |
+| frontend | This is a repo containing all frontend applications such as Flyhoot, Dayhoot, etc. The purpose of this repo is to handle the frontend design code required for the user to interact with the application. Much of this code is build from the @hootsoft/frontend_framework. |
+| frontend_framework | This is a repo containing common frontend functionality consumed within the @hootsoft/frontend project. This contains common functions, similar to the @hootsoft/backend_framework but also incorporates a frontend UI library, similar to popular libraries such as MUI & Bootstrap. In doing this, we can centrally maintain and visually align @hootsoft family applications. |
+| hootsoft.github.io | This repo should not be manually modified. It contains the compiled JS files for the @hootsoft/frontend_framework and is used in conjunction with the exposed NPM typings. For this to work, we must import the @hootsoft/frontend_framework package from NPM and also point Module Federation to this repo's `remoteEntry.js` file.  |
+| javaRestApis | This is a repo containing some REST API training Dan has been doing around Java. This is not currently implemented into hootsoft. |
+
+
 ### Installing DynamoDB in Docker
 If your backend package uses DynamoDB, you will want a local instance. One way this can be done is by installing it from a Docker image. The recommended Docker image  is `instructure/dynamo-local-admin:latest` and can be installed using the following steps:
 
