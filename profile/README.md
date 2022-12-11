@@ -88,7 +88,6 @@ Once you have this set up, the relevant container should be configured to run au
 
 If you need to troubleshoot the Docker container not running on `yarn start`, take a look at the `package.json` file within the package you want to start. It should say something like `"start": "yarn g:dynamo:{package} && yarn g:start",`. What this is doing is looking at the root/global `package.json` file in @hootsoft/backend, running the script `"g:dynamo:{package}": "docker start dynamodb_{package}"` first, then running `yarn start`. 
 
-
 ### @hootsoft/backend_framework
 @hootsoft/backend_framework is the repo containing all common functionality for the @hootsoft/backend app. Here we store common functions which we might need between apps for functionality such as accessing databases, performing calculations, sorting through data, etc. There is no need to run this app locally for the @hootsoft/backend to work, since it uses the latest deployed version from NPM. It will need running when developing the @hootsoft/backend_framework app though to test before checking in & deploying to NPM. 
 
@@ -98,3 +97,11 @@ To change to the relevant package, it will look something like:
 
 - `cd .\packages\{package}\` if navigating from within the backend_framework directory
 - `cd .\backend_framework\packages\{package}\` if navigating from the "hootsoft" directory
+
+### @hootsoft/frontend
+@hootsoft/frontend is the repo containing all the frontend apps for Hootsoft. These may consist of apps such as Flyhoot, Dayhoot, etc. The content that we expect to be within this repo is the individual frontend (UI) content specific to each application, often assembling components of the @hootsoft/frontend_framework UI library. When we are working on an app within the @hootsoft/frontend project locally, we will want to run it. 
+
+To change to the relevant app, it will look something like:
+
+- `cd .\packages\{package}\` if navigating from within the frontend directory
+- `cd .\frontend\packages\{package}\` if navigating from the "hootsoft" directory
