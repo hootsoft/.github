@@ -72,7 +72,7 @@ When setting up DynamoDB within docker, please use the following configuration t
 Once the @hootsoft/backend app is running, it should then be accessible from any consuming frontend app, such as Flyhoot, providing it is allowed within the CORS settings. To test any APIs, you may wish to use [Postman](https://www.postman.com/) but ensure you have Postman desktop installed and running to call localhost APIs.
 
 #### Running the Application
-To run the backend package locally, simply navigate to the root of the relevant package (so Flyhoot, Dayhoot, etc.) and run a `yarn start`. 
+To run the backend app locally, simply navigate to the root of the relevant package (so Flyhoot, Dayhoot, etc.) and run a `yarn start`. 
 
 It will look something like:
 
@@ -89,3 +89,12 @@ Once you have this set up, the relevant container should be configured to run au
 If you need to troubleshoot the Docker container not running on `yarn start`, take a look at the `package.json` file within the package you want to start. It should say something like `"start": "yarn g:dynamo:{package} && yarn g:start",`. What this is doing is looking at the root/global `package.json` file in @hootsoft/backend, running the script `"g:dynamo:{package}": "docker start dynamodb_{package}"` first, then running `yarn start`. 
 
 
+### @hootsoft/backend_framework
+@hootsoft/backend_framework is the repo containing all common functionality for the @hootsoft/backend app. Here we store common functions which we might need between apps for functionality such as accessing databases, performing calculations, sorting through data, etc. There is no need to run this app locally for the @hootsoft/backend to work, since it uses the latest deployed version from NPM. It will need running when developing the @hootsoft/backend_framework app though to test before checking in & deploying to NPM. 
+
+To run the app, navigate to the root of the package you want to run. Due to the app being configured as a [Yarn Workspace](https://classic.yarnpkg.com/lang/en/docs/workspaces/) it will have nested "packages". Currently there is only one package `packages/framework` but we have scope to add more, for example `packages/sandbox` which we can use for testing out functionality before deployment or `packages/test` that we can use for automation testing.
+
+To change to the relevant package, it will look something like:
+
+- `cd .\packages\{package}\` if navigating from within the backend_framework directory
+- `cd .\backend_framework\packages\{package}\` if navigating from the "hootsoft" directory
