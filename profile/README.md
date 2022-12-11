@@ -1,5 +1,11 @@
 # Hootsoft
-## Packages
+
+# Table of Contents
+1. [Hootsoft Packages](#packages)
+2. [Set-up Environment](#set-up-environment)
+3. [Running Environments Locally](#running-environments-locally)
+
+## Hootsoft Packages
 The @hootsoft application is built of multiple packages with multiple purposes. They are as follows:
 | Name | Purpose |
 | -- | -- |
@@ -60,7 +66,7 @@ When setting up DynamoDB within docker, please use the following configuration t
 | Camphoot | dynamodb_camphoot | 8999:8000 |
 | Flyhoot | dynamodb_flyhoot | 8998:8000 |
 
-## Running your Environment(s) Locally
+## Running Environments Locally
 ### @hootsoft/backend
 @hootsoft/backend is the repo containing all main backend applications within the hootsoft family. These consist of applications such as Flyhoot, Dayhoot, etc. When working locally, these applications will need to be run along with associated services (such as Docker). 
 
