@@ -1,6 +1,6 @@
 # Hootsoft
 
-# Table of Contents
+## Table of Contents
 1. [Hootsoft Packages](#packages)
 2. [Set-up Environment](#set-up-environment)
 3. [Running Environments Locally](#running-environments-locally)
@@ -23,7 +23,7 @@ To set up your environment, you need to perform multiple steps. For any of the s
 
 Just a reminder that you may need to reboot your machine after installing for the changes to take effect.
 
-Once you have installed these, you can go ahead and choose a method of setup. Either you can perform individual steps, as listed in the subheadings within this section. Alternatively, you can download and run the [Hootsoft Initial Setup](https://raw.githubusercontent.com/hootsoft/.github/main/hootsoft-initial-setup.bat) batch file and your environment should set itself up. To download the file, right-click the hyperlink and "Save As". Once downloaded, either edit the desired directory (it defaults to `C:\`) or just double-click it and run it. 
+Once you have installed these, you can go ahead and choose a method of setup. Either you can perform individual steps, as listed in the subheadings within this section. Alternatively, you can download and run the [Hootsoft Initial Setup](https://raw.githubusercontent.com/hootsoft/.github/main/hootsoft-initial-setup.bat) batch file and your environment should set itself up. To download the file, right-click the hyperlink and "Save As". Once downloaded, either edit the desired directory (it defaults to `C:\`) or just double-click it and run it. If all the steps are successful, you can skip the remaining info in this section.
 
 ### Installing Package Repos
 To install package repos, ensure you have installed [GitHub CLI](https://cli.github.com/). Your machine might need a reboot before it starts working. For local manageability, I would recommend creating a folder (directory) called "Hootsoft" and cloning all of the repos into one place. This can be done through GUI or from the terminal, navigating to where you would like the new directory and running `mkdir "Hootsoft"`. 
@@ -52,7 +52,6 @@ This repo is experimental at this point. There is no need to pull it down.
 
 ### Installing DynamoDB in Docker
 If your backend package uses DynamoDB, you will want a local instance. One way this can be done is by installing it from a Docker image. The recommended Docker image  is `instructure/dynamo-local-admin:latest` and can be installed using the following steps:
-
 
 - Ensure Docker is installed on your local machine and that it works from the terminal
 - In the terminal, run `docker pull instructure/dynamo-local-admin`
