@@ -67,7 +67,9 @@ When setting up DynamoDB within docker, please use the following configuration t
 
 ## Running Environments Locally
 ### @hootsoft/backend
-@hootsoft/backend is the repo containing all main backend applications within the hootsoft family. These consist of applications such as Flyhoot, Dayhoot, etc. When working locally, these applications will need to be run along with associated services (such as Docker). 
+@hootsoft/backend is the repo containing all main backend applications within the hootsoft family. These consist of applications such as Flyhoot, Dayhoot, etc. When working locally, these applications will need to be run along with associated services (such as Docker). Whilst this app uses the @hootsoft/backend_framework package, because it is deployed to NPM, it doesn't need to be run at the same time. 
+
+Once the @hootsoft/backend app is running, it should then be accessible from any consuming frontend app, such as Flyhoot, providing it is allowed within the CORS settings. To test any APIs, you may wish to use [Postman](https://www.postman.com/) but ensure you have Postman desktop installed and running to call localhost APIs.
 
 #### Running the Application
 To run the backend package locally, simply navigate to the root of the relevant package (so Flyhoot, Dayhoot, etc.) and run a `yarn start`. 
@@ -85,3 +87,5 @@ If the application that you are running requires a DynamoDB Database, ensure tha
 Once you have this set up, the relevant container should be configured to run automatically when you run `yarn start` on the package. If it doesn't, you should be able to run `docker start {name}` to run the container locally. The name should match the [name in the table](#dynamodb-ports). If successful, you will be able to access your database through a GUI at `http://localhost:{port}/`, for example `http://localhost:8992/`. 
 
 If you need to troubleshoot the Docker container not running on `yarn start`, take a look at the `package.json` file within the package you want to start. It should say something like `"start": "yarn g:dynamo:{package} && yarn g:start",`. What this is doing is looking at the root/global `package.json` file in @hootsoft/backend, running the script `"g:dynamo:{package}": "docker start dynamodb_{package}"` first, then running `yarn start`. 
+
+
