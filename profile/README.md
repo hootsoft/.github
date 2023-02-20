@@ -18,7 +18,8 @@ The @hootsoft application is built of multiple packages with multiple purposes. 
 
 ## Set-up Environment
 To set up your environment, you need to perform multiple steps. For any of the setup methods we can use, you will need to make sure you have a few things installed otherwise you will run into errors. The things to install are:
-1. [Git](https://gitforwindows.org/)
+1. [Git](https://gitforwindows.org/) click yes to everything but double check you have it selected to use git in 3rd party applications.
+2. [Node](https://nodejs.org/en/download/) and just click yes to everything.
 2. [GitHub CLI](https://cli.github.com/)
 3. [Docker Desktop](https://www.docker.com/products/docker-desktop/) and ensure Docker CLI is working.
 
@@ -73,6 +74,8 @@ When setting up DynamoDB within docker, please use the following configuration t
 Once the @hootsoft/backend app is running, it should then be accessible from any consuming frontend app, such as Flyhoot, providing it is allowed within the CORS settings. To test any APIs, you may wish to use [Postman](https://www.postman.com/) but ensure you have Postman desktop installed and running to call localhost APIs.
 
 #### Running the Application
+When your selected repo has been cloned, you will need to run a `yarn install` in each one to make sure it pulls down the packages. If you have any issues with that, first run a `npm install yarn`, then run `yarn install`. Just make sure to remove `yarn` from `package.json` if it wasn't previously there, as can be seen in your change differences.
+
 To run the backend app locally, simply navigate to the root of the relevant package (so Flyhoot, Dayhoot, etc.) and run a `yarn start`. 
 
 It will look something like:
