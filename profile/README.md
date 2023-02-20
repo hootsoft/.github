@@ -18,8 +18,9 @@ The @hootsoft application is built of multiple packages with multiple purposes. 
 
 ## Set-up Environment
 To set up your environment, you need to perform multiple steps. For any of the setup methods we can use, you will need to make sure you have a few things installed otherwise you will run into errors. The things to install are:
-1. [GitHub CLI](https://cli.github.com/)
-2. [Docker Desktop](https://www.docker.com/products/docker-desktop/) and ensure Docker CLI is working.
+1. [Git](https://gitforwindows.org/)
+2. [GitHub CLI](https://cli.github.com/)
+3. [Docker Desktop](https://www.docker.com/products/docker-desktop/) and ensure Docker CLI is working.
 
 Just a reminder that you may need to reboot your machine after installing for the changes to take effect.
 
